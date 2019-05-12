@@ -53,7 +53,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                     <button type="reset" class="btn btn-warning">Clear</button>
                                 </div>
                             </div>

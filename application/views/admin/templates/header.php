@@ -179,8 +179,8 @@
                         <li>
                             <a href="index.html"><i class="fa fa-bus"></i> <span>Bus</span></a>
                             <ul>
-                                <li><a href="#">Add Buse</a></li>
-                                <li><a href="#">All Buses</a></li>
+                                <li><a href="<?php echo base_url('bus/add'); ?>">Add Buse</a></li>
+                                <li><a href="<?php echo base_url('bus/all'); ?>">All Buses</a></li>
                             </ul>
                         </li>
 
