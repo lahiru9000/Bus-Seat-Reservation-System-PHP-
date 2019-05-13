@@ -5,69 +5,60 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-block">
-                        <legend class="text-bold">Add Bus</legend>
+                        <legend class="text-bold">Add Trips</legend>
                         <fieldset class="content-group">
+
                             <?php echo validation_errors(); ?>
-                            <?php echo form_open('Buses/update'); ?>
-                            <input type="hidden" name="id" value="<?php echo $bus['id']; ?>">
+                            <?php echo form_open('Trips/create'); ?>
                             <div class="form-group row margin-top-10">
+                                <div class="col-md-2">
+                                    <label class="control-label col-form-label">Departure Date</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="date" class="form-control" name="dDate" value="<?php echo $trip['departure_date']; ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row margin-top-10">
+                                <div class="col-md-2">
+                                    <label class="control-label col-form-label">Arrival Date</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="date" class="form-control" name="aDate" value="<?php echo $trip['arrival_date']; ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-2">
+                                    <label class="control-label col-form-label">Departure Time</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="dTime" value="<?php echo $trip['departure_time']; ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-2">
+                                    <label class="control-label col-form-label">Arrival Time</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="aTime" value="<?php echo $trip['arrival_time']; ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-2">
+                                    <label class="control-label col-form-label">Duration</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="duration" value="<?php echo $trip['duration']; ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <div class="col-md-2">
                                     <label class="control-label col-form-label">Bus Number</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="busNo" value="<?php echo $bus['bus_number']; ?>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-2">
-                                    <label class="control-label col-form-label">Name</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="name" value="<?php echo $bus['name']; ?>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-2">
-                                    <label class="control-label col-form-label">No of Seats</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <input type="number" class="form-control" name="noOfSeats" value="<?php echo $bus['no_of_seats']; ?>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-2">
-                                    <label class="control-label col-form-label">Type</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <select name="type" class="form-control"  value="<?php echo $bus['type']; ?>">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Semi Luxury">Semi Luxury</option>
-                                        <option value="Luxury">Luxury</option>
-                                        <option value="Super Luxury">Super Luxury</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-2">
-                                    <label class="control-label col-form-label">Facilities</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="facilities" placeholder="Use comma seperators"  value="<?php echo $bus['facilities']; ?>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-10">
-                                    <input type="hidden" class="form-control" name="availability" value="<?php echo $bus['availability']; ?>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-2">
-                                    <label class="control-label col-form-label">Route Number</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <select name="routeId" class="form-control">
-                                        <?php foreach ($routes as $route) : ?>
-                                            <option value="<?php echo $route['id']; ?>"><?php echo $route['route_number'] . "&nbsp&nbsp&nbsp&nbsp&nbsp" . $route['start_location'] . "=>" . $route['end_location']; ?></option>
+                                    <select name="busId">
+                                        <option value="<?php echo $bus['id']; ?>"><?php echo $bus['bus_number']; ?></option>
+                                        <?php foreach ($buses as $bus) : ?>
+                                            <option value="<?php echo $bus['id']; ?>"><?php echo $bus['bus_number']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>

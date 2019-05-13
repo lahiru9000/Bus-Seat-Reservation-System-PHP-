@@ -179,8 +179,16 @@
                         <li>
                             <a href="index.html"><i class="fa fa-bus"></i> <span>Bus</span></a>
                             <ul>
-                                <li><a href="<?php echo base_url('bus/add'); ?>">Add Buse</a></li>
+                                <li><a href="<?php echo base_url('bus/add'); ?>">Add Bus</a></li>
                                 <li><a href="<?php echo base_url('bus/all'); ?>">All Buses</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="index.html"><i class="fa fa-location-arrow"></i> <span>Trip</span></a>
+                            <ul>
+                                <li><a href="<?php echo base_url('trip/add'); ?>">Add Trip</a></li>
+                                <li><a href="<?php echo base_url('trip/all'); ?>">All Trips</a></li>
                             </ul>
                         </li>
 
