@@ -7,16 +7,14 @@ class Trip_model extends CI_model
         $this->load->database();
     }
 
-    public function getTrips($id = FALSE)
+    public function getTripsAndBuses()
     {
-        if ($id === FALSE) {
-            $query = $this->db->get('trip');
-            return $query->result_array();
-        } else {
-            $query = $this->db->get_where('trip', array('id' => $id));
-            return $query->row_array();
-        }
-        
+        $query = $this->db->select('*')
+            ->from('bus')
+            ->join('trip', 'trip.bus_id = bus.id')
+            ->get();
+
+        return $query->result_array();
     }
 
     public function createTrip()

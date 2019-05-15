@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-block">
-                        <h6 class="card-title text-bold">Routes</h6>
+                        <h6 class="card-title text-bold">Trips</h6>
                         <p class="content-group">
                             This is the most basic example of the datatables with zero configuration. Use the <code>.datatable</code> class to initialize datatables.
                         </p>
@@ -19,7 +19,7 @@
                                     <th>Departure Time</th>
                                     <th>Arrival Time</th>
                                     <th>Duration</th>
-                                    <th>Bus Id</th>
+                                    <th>Bus Number</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -30,7 +30,7 @@
                                     <th>Departure Time</th>
                                     <th>Arrival Time</th>
                                     <th>Duration</th>
-                                    <th>Bus Id</th>
+                                    <th>Bus Number</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -42,7 +42,7 @@
                                         <td><?php echo $trip['departure_time']; ?></td>
                                         <td><?php echo $trip['arrival_time']; ?></td>
                                         <td><?php echo $trip['duration']; ?></td>
-                                        <td><?php echo $trip['bus_id']; ?></td>
+                                        <td><?php echo $trip['bus_number']; ?></td>
                                         <td>
                                             <a href="<?php echo base_url('Trips/delete/' . $trip['id'] . '/' . $trip['bus_id']); ?>" class="btn btn-sm btn-danger">Delete</a>
                                         </td>

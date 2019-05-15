@@ -5,7 +5,7 @@ class Trips extends CI_controller
     public function index()
     {
         $data['title'] = "All Trips";
-        $data['trips'] = $this->Trip_model->getTrips();
+        $data['trips'] = $this->Trip_model->getTripsAndBuses();
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/trips/index', $data);

@@ -16,7 +16,7 @@ $route['trip/add'] = 'Trips/create';
 $route['trip/all'] = 'Trips/index';
 $route['trip/delete'] = 'Trips/delete/$1';
 
-$route['default_controller'] = 'Admin/home';
+$route['default_controller'] = 'Users/home';
 $route['(:any)'] = 'Admin/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
