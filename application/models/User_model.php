@@ -15,13 +15,16 @@ class User_model extends CI_Model
             'departure_date' => $this->input->post('dDate')
         );
 
-        $this->db->select('*');
-        $this->db->from('trip t');
-        $this->db->join('bus b', 'b.id = t.bus_id', 'left');
-        $this->db->join('route r', 'r.id = bus.route_id', 'left');
+        $table = $this->db
+            ->select('*')
+            ->from('trip')
+            ->join('bus', 'bus.id = trip.bus_id')
+            ->join('route', 'route.id = trip.route_id')
+            ->where($data)
+            ->get();
 
-        $query = $this->db->get_where('trip', $data);
+        // $query = $this->db->get_where($table, $data);
 
-        return $query->result_array();
+        return $table->result_array();
     }
 }

@@ -11,7 +11,7 @@
             <tr>
                 <td><?php echo $bus['bus_number']; ?></td>
                 <td><?php echo $bus['duration']; ?></td>
-                <td><?php echo $bus['route number']; ?></td>
+                <td><?php echo $bus['route_number']; ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

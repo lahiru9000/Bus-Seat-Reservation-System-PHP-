@@ -17,18 +17,18 @@
         <div class="ban-top">
             <div class="bnr-left">
                 <label class="inputLabel">From</label>
-                <input name="start" class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
+                <input name="start" class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required>
             </div>
             <div class="bnr-left">
                 <label class="inputLabel">To</label>
-                <input name="end" class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
+                <input name="end" class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="ban-bottom">
             <div class="bnr-right">
                 <label class="inputLabel">Date of Journey</label>
-                <input type="date" name="dDate" required=>
+                <input type="date" name="dDate" required>
             </div>
             <div class="clearfix"></div>
         </div>

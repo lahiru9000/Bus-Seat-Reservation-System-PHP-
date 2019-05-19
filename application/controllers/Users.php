@@ -19,11 +19,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('dDate', 'Departure Date', 'required');
 
         if ($this->form_validation->run() === FALSE) {
-            $data['title'] = "Welcome to Our Homepage";
-
-            $this->load->view('user/templates/header', $data);
-            $this->load->view('user/home');
-            $this->load->view('user/templates/footer');
+            $this->home();
         } else {
             $data['buses'] = $this->User_model->searchBus();
 
