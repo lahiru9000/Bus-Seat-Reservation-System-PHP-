@@ -9,7 +9,7 @@ class Trips extends CI_controller
 
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/trips/index', $data);
-        $this->load->view('admin/templates/footer');
+        // $this->load->view('admin/templates/footer');
     }
 
 
@@ -23,7 +23,7 @@ class Trips extends CI_controller
         if (!$this->form_validation->run()) {
             $this->load->view('admin/templates/header', $data);
             $this->load->view('admin/trips/create', $data);
-            $this->load->view('admin/templates/footer');
+            // $this->load->view('admin/templates/footer');
         } else {
             $this->Trip_model->createTrip();
             redirect('trip/add');
@@ -34,5 +34,13 @@ class Trips extends CI_controller
     {
         $this->Trip_model->deleteTrip($id, $busId);
         redirect('trip/all');
+    }
+
+    public function getRouteId()
+    {
+        $busId = $this->input->post('busId');
+        $data = $this->Trip_model->getRouteId($busId);
+
+        echo "<input type='hidden' id='routeId' name='routeId' value='" . $data->route_id . "'>";
     }
 }

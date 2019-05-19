@@ -55,48 +55,21 @@
                                     <label class="control-label col-form-label">Bus Number</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <select name="busId">
+                                    <select name="busId" id="busId" class="form-control">
                                         <?php foreach ($buses as $bus) : ?>
                                             <option value="<?php echo $bus['id']; ?>"><?php echo $bus['bus_number']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
-                                    <!-- <input type="text" class="form-control" name="busId"> -->
                                 </div>
                             </div>
+                            <div class="form-group row" id="routeId"></div>
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button id="submitBtn" type="submit" class="btn btn-primary">Save</button>
                                     <button type="reset" class="btn btn-warning">Clear</button>
                                 </div>
                             </div>
                             </form>
-
-                        </fieldset>
-
-                        <legend class="text-bold">Validation States</legend>
-                        <fieldset class="content-group">
-                            <div class="form-group has-success">
-                                <label class="form-control-label" for="inputSuccess1">Input with
-                                    success</label>
-                                <input type="text" class="form-control form-control-success" id="inputSuccess1">
-                                <div class="form-control-feedback">Success! You've done it.</div>
-                            </div>
-
-                            <div class="form-group has-warning">
-                                <label class="form-control-label" for="inputWarning1">Input with
-                                    warning</label>
-                                <input type="text" class="form-control form-control-warning" id="inputWarning1">
-                                <div class="form-control-feedback">Shucks, check the formatting of that and
-                                    try again.</div>
-                            </div>
-
-                            <div class="form-group has-danger">
-                                <label class="form-control-label" for="inputDanger1">Input with
-                                    danger</label>
-                                <input type="text" class="form-control form-control-danger" id="inputDanger1">
-                                <div class="form-control-feedback">Sorry, that username's taken. Try
-                                    another?</div>
-                            </div>
                         </fieldset>
                     </div>
                 </div>
@@ -105,3 +78,34 @@
     </div>
 </div>
 <!-- /PAGE CONTENT -->
+</div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        getRouteId();
+
+        function getRouteId() {
+            var busId = $('#busId').val();
+            $.ajax({
+                method: "POST",
+                data: {
+                    busId: busId
+                },
+                url: "<?php echo site_url('Trips/getRouteId') ?>",
+                success: function(data) {
+                    $('#routeId').html(data);
+                }
+            });
+        }
+
+        $('#busId').change(function(){
+            getRouteId();
+        });
+    });
+</script>
+
+</body>
+
+</html>

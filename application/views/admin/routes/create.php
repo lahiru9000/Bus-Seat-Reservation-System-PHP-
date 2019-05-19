@@ -47,7 +47,7 @@
                                     <label class="control-label col-form-label">destinations</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="destinations">
+                                    <input type="text" class="form-control" name="destinations" placeholder="Seperate using commas">
                                 </div>
                             </div>
                             <div class="form-group row">

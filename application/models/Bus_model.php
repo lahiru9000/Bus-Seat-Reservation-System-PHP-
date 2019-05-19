@@ -41,8 +41,13 @@ class Bus_model extends CI_model
 
     public function deleteBus($id)
     {
+        //delete bus
         $this->db->where('id', $id);
         $this->db->delete('bus');
+
+        //delete trips
+        $this->db->where('bus_id', $id);
+        $this->db->delete('trip');
         return true;
     }
 

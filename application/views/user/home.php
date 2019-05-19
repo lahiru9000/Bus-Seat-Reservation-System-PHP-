@@ -31,15 +31,6 @@
                 <input type="date" name="dDate" required=>
             </div>
             <div class="clearfix"></div>
-            <!---start-date-piker---->
-            <link rel="stylesheet" href="css/jquery-ui.css" />
-            <script src="<?php echo base_url('assets/user/js/jquery-ui.js') ?>"></script>
-            <script>
-                $(function() {
-                    $("#datepicker,#datepicker1").datepicker();
-                });
-            </script>
-            <!---/End-date-piker---->
         </div>
         <div class="sear">
             <button class="seabtn" type="submit">Search Buses</button>

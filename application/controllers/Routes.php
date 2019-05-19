@@ -17,11 +17,11 @@ class Routes extends CI_Controller
         $data['title'] = "Create Route";
 
         $this->form_validation->set_rules('routeNo', 'Route Number', 'required');
-        $this->form_validation->set_rules('routeNo', 'Route Number', 'required|alpha_numeric');
+        // $this->form_validation->set_rules('routeNo', 'Route Number', 'required|alpha_numeric');
         $this->form_validation->set_rules('distance', 'Distance', 'required|is_natural_no_zero');
         $this->form_validation->set_rules('start', 'Start Location', 'required|alpha');
         $this->form_validation->set_rules('end', 'End Location', 'required|alpha');
-        $this->form_validation->set_rules('destinations', 'Destinations', 'required|alpha');
+        $this->form_validation->set_rules('destinations', 'Destinations', 'required');
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/templates/header', $data);

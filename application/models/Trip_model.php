@@ -26,6 +26,7 @@ class Trip_model extends CI_model
             'arrival_time' => $this->input->post('aTime'),
             'duration' => $this->input->post('duration'),
             'bus_id' => $this->input->post('busId'),
+            'route_id' => $this->input->post('routeId')
         );
 
         $this->db->set('availability', 'not available');
@@ -48,5 +49,10 @@ class Trip_model extends CI_model
         $this->db->where('id', $id);
         $this->db->delete('trip');
         return true;
+    }
+
+    public function getRouteId($busId)
+    {
+        return $this->db->select('route_id')->get_where('bus', array('id' => $busId))->row();
     }
 }
